@@ -1,10 +1,21 @@
 import react from 'react'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from './Components/Home'
+import Navbar from "./Components/Navbar"
+import FaceRecognition from "./Components/faceRecognition"
+import "./App.css"
 function App() {
   return (
     <div>
-        FACE-RECOGNITION W
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/face' exact element={<FaceRecognition />} />
+        </Routes>
+      </Router>
     </div>
+
   );
 }
 
