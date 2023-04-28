@@ -1,11 +1,13 @@
 .navbar{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   padding: 0px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   height: 40px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  background: white;
 }
 a{  
   font-size: 18px;
@@ -14,4 +16,30 @@ a{
 }
 .nav-bar-active{
   color:#00b8d4;
+}
+.container{
+      display: flex;
+    /* border: solid white; */
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    margin: auto;
+    padding: 50px
+}
+
+.face{
+  color: white;
+  border: solid white 2px;
+  width:340px;
+  height: 340px;
+  border-radius: 10px;
+}
+
+.car{
+  color: white;
+  border: solid white 2px;
+  width:340px;
+  height: 340px;
+  border-radius: 10px;
 }
