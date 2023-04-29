@@ -43,3 +43,77 @@ a{
   height: 340px;
   border-radius: 10px;
 }
+
+.preview{
+  width: 250px;
+  height: 250px;
+}
+
+.face-container{
+  border: solid;
+  width: 700px;
+  height: 700px;
+  margin:auto;
+  display: flex;
+  align-items: center;
+}
+
+.contents{
+  margin: auto;
+  border: solid;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.btn{
+  width: 100%
+}
+
+.finds{
+  border: solid;
+  height: 600px;
+  margin: 50px;
+}
+
+.finds-data{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+  cursor: pointer;
+}
+
+.maps-data-container{
+  border: solid;
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  background: white;
+}
+.maps-data{
+  display: flex;
+}
+
+.maps{
+  width: 600px;
+  height: 500px;
+  border: solid;
+}
+
+.data{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: solid;
+  margin: auto;
+}
+
+.map-image{
+  width:400px;
+  height: 250px;  
+}

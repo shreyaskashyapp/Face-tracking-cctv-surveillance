@@ -11,6 +11,12 @@ export default function Navbar() {
       </li>
         </Link>
 
+        <Link to='/finds'>
+        <li className={location.pathname === '/finds' ? 'nav-bar-active' : ''}>
+          Finds
+    </li>
+      </Link>
+
         <Link to='/face'>
           <li className={location.pathname === '/face' ? 'nav-bar-active' : ''}>
             FaceRecogn
