@@ -1,11 +1,13 @@
 import react from 'react'
+import MAP from './map'
+import '../App.css'
 
 export default function Mapdata(props){
   return(
     <div className="maps-data-container">
         <div className='maps-data'>
             <div className='maps'>
-              MAPS
+              <MAP/>
             </div>
             <div className='data'> 
                 <img className="map-image"src="" alt=""/>

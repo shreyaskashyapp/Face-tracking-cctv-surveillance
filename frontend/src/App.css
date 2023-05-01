@@ -117,3 +117,17 @@ a{
   width:400px;
   height: 250px;  
 }
+
+
+.leaflet-container {
+  width: 600px;
+  height: 498px;
+  margin: auto; /* to center the map horizontally */
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  border-color: black;
+}
