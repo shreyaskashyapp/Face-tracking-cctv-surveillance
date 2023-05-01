@@ -1,57 +1,55 @@
-import react from 'react'
-import { useState } from 'react'
-// import axios from 'axios'
-import Particle from "./Particles"
-export default function FaceRecognittion() {
-  const [image, setImage] = useState("")
-  const [exsists, setExsits] = useState(false)
+import React, { useState } from "react";
+import "./FaceRecognition.css";
 
-  function convert(e) {
-    var reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () => {
-      console.log(reader.result)
-      setImage(reader.result)
-      setExsits(prev => !prev)
-    }
-    reader.onerror = error => {
-      console.log("ERROR ", error)
-    }
-  }
-  function handleSubmit() {
-    const obj = {
-      contentType: "w",
-      Data: image,
-    }
-    console.log("Submitted and cool animation plays")
-    window.location.reload()
-    // axios.post('http://localhost:8080/images/add', obj)
-    //   .then(res => { console.log(res) })
-    //   .catch(err => console.log(err));
-  }
+export default function FaceRecognition() {
+  const [image, setImage] = useState(null);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+  };
+
+  const handleUploadClick = () => {
+    // Add code to handle the upload here
+    fetch("http://localhost:5000/run-facial-recognition")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+    console.log("Upload clicked");
+  };
+
   return (
-    <div>
-      <Particle />
-      <div className='face-container'>
-        <div className='contents'>
-          {exsists && <div className="img-container">
-            <img className="preview" src={image} alt="" />
-          </div>}
-
-
-          <div>
-            <form action="">
-              <input type="file"
-                accept="image/*"
-                onChange={convert} 
-              />
-            </form>
-            <button className="btn" onClick={handleSubmit}>submit</button>
-          </div>
-        </div>
+    <div className="face-recognition">
+      <div className="upload-container">
+        <label htmlFor="image-upload" className="upload-label">
+          Select Image
+        </label>
+        <input
+          id="image-upload"
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+        />
       </div>
-
-
+      {image && (
+        <div className="image-container">
+          <div className="image-preview-container">
+            <img src={image} alt="Preview" className="image-preview" />
+          </div>
+          <button className="upload-button" onClick={handleUploadClick}>
+            Upload
+          </button>
+        </div>
+      )}
     </div>
-  )
+  );
 }
