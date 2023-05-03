@@ -23,6 +23,13 @@ export default function Navbar() {
           FaceRecognition
         </li>
       </Link>
+
+      <Link to="/car">
+      <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
+        ninaknVarun
+
+      </li>
+    </Link>
     </nav>
   );
 }

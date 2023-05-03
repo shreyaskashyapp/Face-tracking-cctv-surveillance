@@ -86,6 +86,7 @@ a{
   justify-content: space-between;
   border-bottom: solid 1px;
   cursor: pointer;
+  padding: 0px 40px;
 }
 
 .maps-data-container{

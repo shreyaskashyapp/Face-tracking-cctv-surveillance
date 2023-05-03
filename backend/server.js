@@ -10,6 +10,7 @@ const port= process.env.PORT || 8080
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(express.json({limit: '50mb'}));
 
 const uri = process.env.ATLAS_URI;
 console.log(uri)
@@ -24,8 +25,10 @@ connection.once('open',()=>{
 })
 
 const imageRouter=require('./routes/images');
+const refsRouter= require('./routes/ref')
 
-app.use('/images',imageRouter);
+app.use('/finds',imageRouter);
+app.use('/references',refsRouter);
 
 app.listen(port,()=>{
   console.log(`Server is running on port ${port}`);

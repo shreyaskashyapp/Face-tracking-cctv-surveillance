@@ -1,26 +1,51 @@
-import react, { useState } from 'react'
+import react, { useState, useEffect } from 'react'
 import Mapsdata from './mapData'
 import Particle from './Particles'
+import axios from 'axios'
+import Tables from './table'
 
 export default function Finds() {
-  const [show, setShow] = useState(false)
+
+  const [data, setData] = useState([1,2])
+  const [m,setM]= useState()
+  async function fetchData() {
+    try {
+      const res = await axios.get('http://localhost:8080/finds');
+      // console.log(res.data[0].Data)
+      return res.data;
+    } catch (err) {
+      console.log(err);
+    }
+
+  }
+  useEffect(() => {
+    fetchData()
+      .then(data => {
+        setData(data)
+      })
+  }, [])
+  console.log(data)
+
   function handleClick() {
     setShow(prev => !prev)
+    console.log(show)
   }
+
+  function handleClick1(id,src,time,location) {
+    console.log(location)
+    const arr= location.split("/")
+     setM(<Mapsdata name={id} location={[arr[0],arr[1]]} src={src} time={time}/>)
+     setShow(prev => !prev)
+  }
+  const [show, setShow] = useState(false)
+
+  const Element = data.map(items => <Tables name={items.Name} location={items.Location} time={items.Time} onclick={handleClick1} data={items.Data}/>)
+
   return (
     <div className="finds">
-      <div onClick={handleClick} className="finds-data">
-        <h4>1</h4>
-        <h4>Name</h4>
-        <h4>Location</h4>
-        <h4>Time</h4>
-      </div>
-      {show&& <Particle />}
-      {show&& <Mapsdata />}
-      
-
-
-
+      {show && <Particle />}
+      {show && m}
+      {Element}
     </div>
   )
 }

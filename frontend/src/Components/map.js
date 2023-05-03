@@ -7,7 +7,8 @@ import DATA from "./data/demo-data.json";
 
 
 console.log(DATA)
-const MyComponent = () => {
+function MyComponent(props) {
+  console.log(props.props)
   const [active,setActive]=React.useState(null);
 
 
@@ -17,15 +18,11 @@ const MyComponent = () => {
     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     />
  
-  {DATA.map(obj => (
-
-   <Marker position={obj.coords}>
+  {<Marker position={props.props}>
    
-   <Popup><h1>{obj.mname}</h1></Popup>
+   <Popup><h1>{"Barnett Henry"}</h1></Popup>
 
-   </Marker>
-
-  ))}
+   </Marker>}
  
   </Map>;
 

@@ -9,6 +9,9 @@ const imageSchema = new mongoose.Schema(
     Data: {
       type: String,
       required: true
+    },
+    Location:{
+      type: String
     }
   },
   {
@@ -16,6 +19,6 @@ const imageSchema = new mongoose.Schema(
   }
 );
 
-const Image = mongoose.model("Image", imageSchema);
+const Images = mongoose.model("Image", imageSchema);
 
-module.exports = Image;
+module.exports = Images;

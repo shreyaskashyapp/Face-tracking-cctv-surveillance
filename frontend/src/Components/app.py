@@ -13,7 +13,7 @@ def index():
 def run_facial_recognition():
     try:
         print("Calling script")
-        subprocess.run(['python', 'C:/Users/admin/Desktop/facial recognition/FaceRecognition/main.py'], check=True)
+        subprocess.run(['python','/home/kashyap_sri/PycharmProjects/FaceRecogn/main.py'], check=True)
         return 'Facial recognition script executed successfully!'
     except subprocess.CalledProcessError:
         return 'Error: Facial recognition script failed to execute.'
