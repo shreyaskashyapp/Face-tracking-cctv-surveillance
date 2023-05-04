@@ -18,11 +18,11 @@ export default function Home() {
       <Particle />
       <div className="container">
         <div onClick={handleClick1} className="face">
-          Face?
+        <i class='ri-user-fill' ></i>
     </div>
 
         <div onClick={handleClick2} className="car">
-          Car?
+        <i class="ri-car-fill"></i>
     </div>
       </div>
 

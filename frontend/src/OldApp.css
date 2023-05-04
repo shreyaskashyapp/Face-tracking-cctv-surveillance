@@ -1,0 +1,134 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0px 20px;
+  border-radius: 5px;
+  height: 40px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  background: white;
+}
+a{  
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-bar-active{
+  color:#00b8d4;
+}
+.container{
+      display: flex;
+    /* border: solid white; */
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    margin: auto;
+    padding: 50px
+}
+
+.face{
+  color: white;
+  border: solid white 2px;
+  width:340px;
+  height: 340px;
+  border-radius: 10px;
+}
+
+.car{
+  color: white;
+  border: solid white 2px;
+  width:340px;
+  height: 340px;
+  border-radius: 10px;
+}
+
+.preview{
+  width: 250px;
+  height: 250px;
+}
+
+.face-container{
+  border: solid;
+  width: 700px;
+  height: 700px;
+  margin:auto;
+  display: flex;
+  align-items: center;
+}
+
+.contents{
+  margin: auto;
+  border: solid;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.btn{
+  width: 100%
+}
+
+.finds{
+  border: solid;
+  height: 600px;
+  margin: 50px;
+}
+
+.finds-data{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+  cursor: pointer;
+  padding: 0px 40px;
+}
+
+.maps-data-container{
+  border: solid;
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  background: white;
+}
+.maps-data{
+  display: flex;
+}
+
+.maps{
+  width: 600px;
+  height: 500px;
+  border: solid;
+}
+
+.data{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: solid;
+  margin: auto;
+}
+
+.map-image{
+  width:400px;
+  height: 250px;  
+}
+
+
+.leaflet-container {
+  width: 600px;
+  height: 498px;
+  margin: auto; /* to center the map horizontally */
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  border-color: black;
+}

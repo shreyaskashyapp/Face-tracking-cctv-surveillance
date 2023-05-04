@@ -19,11 +19,11 @@ export default function Particle() {
         options={{
           "fullScreen": {
             "enable": true,
-            "zIndex": -1
+            "zIndex": -2
           },
           "particles": {
             "number": {
-              "value": 10,
+              "value": 15,
               "density": {
                 "enable": false,
                 "value_area": 800
@@ -33,9 +33,9 @@ export default function Particle() {
               "value": "#fff"
             },
             "shape": {
-              "type": "star",
+              
               "options": {
-                "sides": 5
+                "sides": 10
               }
             },
             "opacity": {
@@ -43,13 +43,13 @@ export default function Particle() {
               "random": false,
               "anim": {
                 "enable": false,
-                "speed": 1,
+                "speed": 10,
                 "opacity_min": 0.1,
                 "sync": false
               }
             },
             "size": {
-              "value": 4,
+              "value": 2,
               "random": false,
               "anim": {
                 "enable": false,
@@ -127,13 +127,14 @@ export default function Particle() {
             }
           },
           "retina_detect": true,
-          "background": {
-            "color": "#111",
-            "image": "",
-            "position": "50% 50%",
-            "repeat": "no-repeat",
-            "size": "cover"
-          }
+          // "background": {
+          //   "color": "#111",
+          //   "image": "",
+          //   "position": "50% 50%",
+          //   "repeat": "no-repeat",
+          //   "size": "cover"
+            
+          // }
         }}
       />
     </div>
