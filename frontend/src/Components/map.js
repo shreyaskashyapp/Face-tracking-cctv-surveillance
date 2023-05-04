@@ -12,7 +12,7 @@ function MyComponent(props) {
   const [active,setActive]=React.useState(null);
 
 
-  return <Map center={[12.9716, 77.5946]} zoom={14}>
+  return <Map center={props.props} zoom={14}>
   <TileLayer
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

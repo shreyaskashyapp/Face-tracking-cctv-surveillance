@@ -12,13 +12,6 @@ export default function Navbar() {
         </li>
       </Link>
 
-
-      <Link to="/unknown">
-        <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
-          NCC
-        </li>
-      </Link>
-
       <Link to="/finds">
         <li className={location.pathname === "/finds" ? "nav-bar-active" : ""}>
           Finds
@@ -26,11 +19,17 @@ export default function Navbar() {
       </Link>
 
       <Link to="/car">
-      <li className={location.pathname === "/car" ? "nav-bar-active" : ""}>
-        Car Finds
+        <li className={location.pathname === "/car" ? "nav-bar-active" : ""}>
+          Car Finds
 
       </li>
-    </Link>
+      </Link>
+
+      <Link to="/unknown">
+        <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
+          About
+    </li>
+      </Link>
     </nav>
   );
 }
