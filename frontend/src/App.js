@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './Components/Home'
 import Navbar from "./Components/Navbar"
 import FaceRecognition from "./Components/faceRecognition"
-import CarRecognition from "./Components/carRecognition"
+import CarRecognition from "./Components/carrrr"
 import "./App.css"
 import Find from "./Components/finds"
 function App() {
