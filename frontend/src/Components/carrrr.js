@@ -47,8 +47,8 @@ export default function FaceRecognition() {
     <input type="text" placeholder="NUMBER PLATE" name="" id="" onChange={handleChange}/>
       <div className="upload-container">
       </div>
-        <div className="ncc-container">
-          <button className="upload-button" onClick={handleUploadClick}>
+        <div className="image-container">
+          <button className="load-label" onClick={handleUploadClick}>
             SUBMIT
           </button>
         </div>
