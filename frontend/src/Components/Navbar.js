@@ -12,21 +12,22 @@ export default function Navbar() {
         </li>
       </Link>
 
+
+      <Link to="/unknown">
+        <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
+          NCC
+        </li>
+      </Link>
+
       <Link to="/finds">
         <li className={location.pathname === "/finds" ? "nav-bar-active" : ""}>
           Finds
         </li>
       </Link>
 
-      <Link to="/face">
-        <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
-          FaceRecognition
-        </li>
-      </Link>
-
       <Link to="/car">
-      <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
-        ninaknVarun
+      <li className={location.pathname === "/car" ? "nav-bar-active" : ""}>
+        Car Finds
 
       </li>
     </Link>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import "./FaceRecognition.css";
+import Particle from './Particles'
 
 export default function FaceRecognition() {
   const [image, setImage] = useState(null);
@@ -52,14 +53,15 @@ export default function FaceRecognition() {
 
   return (
     <div className="face-recognition">
-    <label >NAME</label>
-    <input type="text" name="" id="" onChange={handleChange}/>
+     <Particle />
+    <input type="text" placeholder="NAME" name="" id="" onChange={handleChange}/>
       <div className="upload-container">
         <label htmlFor="image-upload" className="upload-label">
           Select Image
         </label>
         <input
           id="image-upload"
+          
           type="file"
           accept="image/*"
           onChange={handleImageChange}
