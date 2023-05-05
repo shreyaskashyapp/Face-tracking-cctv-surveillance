@@ -19,11 +19,11 @@ export default function Navbar() {
       </Link>
 
       <Link to="/carfinds">
-        <li className={location.pathname === "/carfinds" ? "nav-bar-active" : ""}>
-          Car Finds
-
+      <li className={location.pathname === "/carfinds" ? "nav-bar-active" : ""}>
+        Car Finds
       </li>
-      </Link>
+    </Link>
+      
 
       <Link to="/unknown">
         <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>

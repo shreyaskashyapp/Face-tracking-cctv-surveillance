@@ -68,7 +68,6 @@ height: 50vh; /* Or set a fixed height */
 
 
 body {
-	/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background: linear-gradient(-45deg, #000000, #440500, #3b0038, #222222);
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite;
@@ -182,6 +181,7 @@ justify-content: space-between;
 border-bottom: solid 1px;
 cursor: pointer;
 padding: 0px 40px;
+/* color: black */
 }
 
 .maps-data-container{

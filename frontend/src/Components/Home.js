@@ -13,6 +13,7 @@ export default function Home() {
   function handleClick2() {
     navigate('/car')
   }
+
   return (
     <div>
       <Particle />
@@ -20,10 +21,10 @@ export default function Home() {
         <div onClick={handleClick1} className="face">
         <i class='ri-user-fill' ></i>
     </div>
-
-        <div onClick={handleClick2} className="car">
+    <div onClick={handleClick2} className="car">
         <i class="ri-car-fill"></i>
-    </div>
+     </div>
+       
       </div>
 
     </div>

@@ -46,7 +46,7 @@ export default function Finds() {
   return (
     <div>
       <div className="finds">
-        {show && <Particle />}
+        
         {show && m}
         {Element}
 
