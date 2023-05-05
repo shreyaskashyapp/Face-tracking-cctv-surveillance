@@ -12,7 +12,7 @@ export default function Cars() {
   const [m, setM] = useState()
   async function fetchData() {
     try {
-      const res = await axios.get('http://localhost:8080/platesData');
+      const res = await axios.get('http://localhost:8080/plates-data');
       // console.log(res.data[0].Data)
       return res.data;
     } catch (err) {

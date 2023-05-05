@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const plateSchema = new mongoose.Schema(
+const plateDataSchema = new mongoose.Schema(
   {
     Name: {
       type: String,
@@ -19,6 +19,6 @@ const plateSchema = new mongoose.Schema(
   }
 );
 
-const Plates = mongoose.model("Plate", plateSchema);
+const PlateData = mongoose.model("PlateData", plateDataSchema);
 
-module.exports = Plates;
+module.exports = PlateData;

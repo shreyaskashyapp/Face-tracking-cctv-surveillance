@@ -14,7 +14,7 @@ export default function FaceRecognition() {
       number: name
     }
     // Add code to handle the upload here
-    axios.post('http://localhost:8080/plates/add', obj)
+    axios.post('http://localhost:8080/plates-info/add', obj)
     .then((response) => {
       console.log(response.data);
     })
