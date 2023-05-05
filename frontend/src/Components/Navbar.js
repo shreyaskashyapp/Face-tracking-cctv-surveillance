@@ -18,8 +18,8 @@ export default function Navbar() {
         </li>
       </Link>
 
-      <Link to="/car">
-        <li className={location.pathname === "/car" ? "nav-bar-active" : ""}>
+      <Link to="/carfinds">
+        <li className={location.pathname === "/carfinds" ? "nav-bar-active" : ""}>
           Car Finds
 
       </li>

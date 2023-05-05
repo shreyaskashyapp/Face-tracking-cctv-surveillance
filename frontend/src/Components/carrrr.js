@@ -1,58 +1,62 @@
-import React, { useState } from "react";
-import axios from 'axios'
-import "./FaceRecognition.css";
+import react, { useState, useEffect } from 'react'
+import Mapsdata from './mapData'
 import Particle from './Particles'
+import axios from 'axios'
+import Tables from './table'
+import Lottie from 'lottie-react'
+import loading from './Animations/loading'
 
-export default function FaceRecognition() {
-  const [name, setName] = useState("");
+export default function Cars() {
 
-  
-
-  const handleUploadClick = () => {
-    console.log("")
-    const obj = {
-      number: name
-    }
-    // Add code to handle the upload here
-    axios.post('http://localhost:8080/plates/add', obj)
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  console.log('Upload clicked');
-
-    // fetch("http://localhost:5000/run-facial-recognition")
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return response.text();
-    //   })
-    //   .then((data) => console.log(data))
-    //   .catch((error) => console.error(error));
-    // console.log("Upload clicked");
-  };
-
-    function handleChange(event){
-      console.log(event.target.value)
-      setName(event.target.value)
+  const [data, setData] = useState([1, 2])
+  const [m, setM] = useState()
+  async function fetchData() {
+    try {
+      const res = await axios.get('http://localhost:8080/platesData');
+      // console.log(res.data[0].Data)
+      return res.data;
+    } catch (err) {
+      console.log(err);
     }
 
+  }
+  useEffect(() => {
+    fetchData()
+      .then(data => {
+        setData(data)
+      })
+  }, [])
+  console.log(data)
+
+  function handleClick() {
+    setShow(prev => !prev)
+    console.log(show)
+  }
+
+  function handleClick1(id, src, time, location) {
+    console.log(location)
+    const arr = location.split("/")
+    setM(<Mapsdata name={id} location={[arr[0], arr[1]]} src={src} time={time} />)
+    setShow(prev => !prev)
+  }
+  const [show, setShow] = useState(false)
+
+  const Element = data.map(items => <Tables name={items.Name} location={items.Location} time={items.Time} onclick={handleClick1} data={items.Data} />)
 
   return (
-    <div className="face-recognition">
-     <Particle />
-    <input type="text" placeholder="NUMBER PLATE" name="" id="" onChange={handleChange}/>
-      <div className="upload-container">
+    <div>
+      <div className="finds">
+        {show && <Particle />}
+        {show && m}
+        {Element}
+
+        {data.length == 0 && <div className="loading">
+          <Lottie animationData={loading} />
+          Loading../
+        </div>}
+
       </div>
-        <div className="image-container">
-          <button className="load-label" onClick={handleUploadClick}>
-            SUBMIT
-          </button>
-        </div>
-      
+
     </div>
-  );
+  )
 }

@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './Components/Home'
 import Navbar from "./Components/Navbar"
 import FaceRecognition from "./Components/faceRecognition"
-import CarRecognition from "./Components/carrrr"
+import CarRecognition from "./Components/carRecognition"
+import Carfinds from './Components/carrrr'
 import "./App.css"
 import Find from "./Components/finds"
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/face' element={<FaceRecognition />} />
           <Route path='/car' element={<CarRecognition />} />
           <Route path='/finds' element={<Find />} />
+          <Route path='/carfinds' element={<Carfinds />} />
         </Routes>
       </Router>
     </div>

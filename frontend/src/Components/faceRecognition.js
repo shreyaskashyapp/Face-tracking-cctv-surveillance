@@ -39,16 +39,16 @@ export default function FaceRecognition() {
     setTimeout(() => { window.location.reload() }, 2000)
     console.log('Upload clicked');
 
-    // fetch("http://localhost:5000/run-facial-recognition")
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return response.text();
-    //   })
-    //   .then((data) => console.log(data))
-    //   .catch((error) => console.error(error));
-    // console.log("Upload clicked");
+    fetch("http://localhost:5000/run-facial-recognition")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+    console.log("Upload clicked");
   };
 
   function handleChange(event) {

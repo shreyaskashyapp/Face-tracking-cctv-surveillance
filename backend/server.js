@@ -27,10 +27,12 @@ connection.once('open',()=>{
 const imageRouter=require('./routes/images');
 const refsRouter= require('./routes/ref')
 const platesRouter =require('./routes/plates')
+const platesDataRouter=require('./routes/platesData')
 
 app.use('/finds',imageRouter);
 app.use('/references',refsRouter);
 app.use('/plates',platesRouter);
+app.use('/platesData',platesDataRouter);
 
 app.listen(port,()=>{
   console.log(`Server is running on port ${port}`);
