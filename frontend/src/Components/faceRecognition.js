@@ -8,7 +8,6 @@ import ticks from './Animations/tick'
 export default function FaceRecognition() {
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
-  const [phno, setPhno] = useState("");
   const [tick, setTick] = useState(false)
 
   const handleImageChange = (event) => {
@@ -26,7 +25,6 @@ export default function FaceRecognition() {
     const obj = {
       Name: name,
       Data: image,
-      Phone:phno
     }
     // Add code to handle the upload here
     axios.post('http://localhost:8080/references/add', obj)
@@ -57,19 +55,11 @@ export default function FaceRecognition() {
     console.log(event.target.value)
     setName(event.target.value)
   }
-
-  function handleChange2(event) {
-    console.log(event.target.value)
-    setPhno(event.target.value)
-  }
-
-
   return (
     <div>
       {!tick && (<div className="face-recognition">
         <Particle />
         <input type="text" placeholder="NAME" name="" id="" onChange={handleChange} />
-        <input type="text" placeholder="PHONE" name="" id="" onChange={handleChange2} />
         <div className="upload-container">
           <label htmlFor="image-upload" className="upload-label">
             Select Image

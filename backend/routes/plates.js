@@ -9,7 +9,8 @@ router.route('/').get((req,res) => {
 
 router.route('/add').post((req,res) => {
   const number=req.body.number;
-  const newPlate = new Plates({number})
+  const Phone=req.body.Phone
+  const newPlate = new Plates({number,Phone})
   newPlate.save()
     .then(() => res.json("Added succesfully"))
     .catch(err => res.status(200).json("error" + err))

@@ -3,6 +3,10 @@ const plateSchema = new mongoose.Schema({
   number: {
     type: String,
     required: true
+  },
+  Phone:{
+    type:String,
+    required:true
   }
 },
   {

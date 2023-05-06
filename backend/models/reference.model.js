@@ -9,10 +9,6 @@ const refeSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-    Phone: {
-      type: String,
-      required: true
-    }
   },
   {
     timestamps: true

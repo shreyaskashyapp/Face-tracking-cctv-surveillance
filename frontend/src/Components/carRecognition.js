@@ -5,13 +5,15 @@ import Particle from './Particles'
 
 export default function FaceRecognition() {
   const [name, setName] = useState("");
+  const [phno, setPhno] = useState("");
 
   
 
   const handleUploadClick = () => {
     console.log("")
     const obj = {
-      number: name
+      number: name,
+      Phone:phno
     }
     // Add code to handle the upload here
     axios.post('http://localhost:8080/plates-info/add', obj)
@@ -21,6 +23,9 @@ export default function FaceRecognition() {
     .catch((error) => {
       console.error(error);
     });
+    setTimeout(function() {
+      window.location.reload()
+    }, 2000);
   console.log('Upload clicked');
 
     // fetch("http://localhost:5000/run-facial-recognition")
@@ -39,12 +44,18 @@ export default function FaceRecognition() {
       console.log(event.target.value)
       setName(event.target.value)
     }
+    
+    function handleChange2(event) {
+      console.log(event.target.value)
+      setPhno(event.target.value)
+    }
 
 
   return (
     <div className="face-recognition">
      <Particle />
     <input type="text" placeholder="NUMBER PLATE" name="" id="" onChange={handleChange}/>
+    <input type="text" placeholder="PHONE" name="" id="" onChange={handleChange2} />
       <div className="upload-container">
       </div>
         <div className="image-container">
