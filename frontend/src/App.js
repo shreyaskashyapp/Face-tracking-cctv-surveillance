@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar"
 import FaceRecognition from "./Components/faceRecognition"
 import CarRecognition from "./Components/carRecognition"
 import Carfinds from './Components/carrrr'
+import CriminalDatabase from './Components/criminalDatabase'
 import "./App.css"
 import Find from "./Components/finds"
 function App() {
@@ -18,6 +19,8 @@ function App() {
           <Route path='/car' element={<CarRecognition />} />
           <Route path='/finds' element={<Find />} />
           <Route path='/carfinds' element={<Carfinds />} />
+          <Route path='/database' element={<CriminalDatabase />} />
+          
         </Routes>
       </Router>
     </div>

@@ -25,9 +25,9 @@ export default function Navbar() {
     </Link>
       
 
-      <Link to="/unknown">
-        <li className={location.pathname === "/face" ? "nav-bar-active" : ""}>
-          About
+      <Link to="/database">
+        <li className={location.pathname === "/database" ? "nav-bar-active" : ""}>
+          Criminal Database
     </li>
       </Link>
     </nav>

@@ -8,6 +8,10 @@ const refeSchema = new mongoose.Schema(
     Data: {
       type: String,
       required: true
+    },
+    Phone: {
+      type: String,
+      required: true
     }
   },
   {

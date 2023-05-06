@@ -27,11 +27,14 @@ const imageRouter = require('./routes/images');
 const refsRouter = require('./routes/ref');
 const platesRouter = require('./routes/plates');
 const platesDataRouter = require('./routes/platesData');
+const crimeRouter = require('./routes/crimes');
 
 app.use('/finds', imageRouter);
 app.use('/references', refsRouter);
 app.use('/plates-info', platesRouter);
 app.use('/plates-data', platesDataRouter);
+app.use('/crimes',crimeRouter);
+
 
 app.listen(port,()=>{
   console.log(`Server is running on port ${port}`);

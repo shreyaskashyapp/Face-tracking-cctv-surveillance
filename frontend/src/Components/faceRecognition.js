@@ -8,6 +8,7 @@ import ticks from './Animations/tick'
 export default function FaceRecognition() {
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
+  const [phno, setPhno] = useState("");
   const [tick, setTick] = useState(false)
 
   const handleImageChange = (event) => {
@@ -24,7 +25,8 @@ export default function FaceRecognition() {
     console.log(image)
     const obj = {
       Name: name,
-      Data: image
+      Data: image,
+      Phone:phno
     }
     // Add code to handle the upload here
     axios.post('http://localhost:8080/references/add', obj)
@@ -39,21 +41,26 @@ export default function FaceRecognition() {
     setTimeout(() => { window.location.reload() }, 2000)
     console.log('Upload clicked');
 
-    fetch("http://localhost:5000/run-facial-recognition")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
-    console.log("Upload clicked");
-  };
+  //   fetch("http://localhost:5000/run-facial-recognition")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.text();
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch((error) => console.error(error));
+  //   console.log("Upload clicked");
+   };
 
   function handleChange(event) {
     console.log(event.target.value)
     setName(event.target.value)
+  }
+
+  function handleChange2(event) {
+    console.log(event.target.value)
+    setPhno(event.target.value)
   }
 
 
@@ -62,6 +69,7 @@ export default function FaceRecognition() {
       {!tick && (<div className="face-recognition">
         <Particle />
         <input type="text" placeholder="NAME" name="" id="" onChange={handleChange} />
+        <input type="text" placeholder="PHONE" name="" id="" onChange={handleChange2} />
         <div className="upload-container">
           <label htmlFor="image-upload" className="upload-label">
             Select Image
